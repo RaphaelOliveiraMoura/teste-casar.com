@@ -1,5 +1,10 @@
+import { Heart } from "lucide-react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
+import { Button } from "@/ui/components/button";
+import { SearchInputText } from "@/ui/components/search-input-text";
+
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +21,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="flex h-full flex-col items-center">
+          <header className="flex w-full justify-between border-b">
+            <SearchInputText
+              className="my-4 ml-8 w-full"
+              placeholder="Buscar usuário"
+            />
+            <Button>
+              <Heart />
+              Favoritos
+            </Button>
+          </header>
+
+          <div className="container flex-1 py-8">{children}</div>
+        </main>
+      </body>
     </html>
   );
 }
