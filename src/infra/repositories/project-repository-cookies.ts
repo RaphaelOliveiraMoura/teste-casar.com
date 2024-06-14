@@ -1,11 +1,11 @@
 import { Project } from "@/domain/entities/project";
-import { ProjectRepository } from "@/domain/repositories/project-repository";
-import { CookiesService } from "@/domain/services/cookies-service";
+import { IProjectRepository } from "@/domain/repositories/project-repository";
+import { ICookiesService } from "@/domain/services/cookies-service";
 
-export class ProjectRepositoryCookies implements ProjectRepository {
+export class ProjectRepositoryCookies implements IProjectRepository {
   private PROJECTS_COOKIE_KEY = "PROJECTS_COOKIE_KEY";
 
-  constructor(private readonly cookies: CookiesService) {}
+  constructor(private readonly cookies: ICookiesService) {}
 
   async getFavoriteProjects(): Promise<{ projects: Project[] }> {
     const projectsCookie = await this.cookies.get(this.PROJECTS_COOKIE_KEY);

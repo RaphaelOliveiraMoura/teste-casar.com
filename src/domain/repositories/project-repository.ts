@@ -1,6 +1,6 @@
 import { Project } from "../entities/project";
 
-export interface ProjectRepository {
+export interface IProjectRepository {
   getFavoriteProjects: () => Promise<{ projects: Project[] }>;
 
   favoriteProject: (project: Project) => Promise<void>;

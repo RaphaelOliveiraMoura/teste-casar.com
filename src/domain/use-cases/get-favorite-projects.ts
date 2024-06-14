@@ -1,12 +1,12 @@
 import { Project } from "../entities/project";
-import { ProjectRepository } from "../repositories/project-repository";
+import { IProjectRepository } from "../repositories/project-repository";
 
 export class GetFavoriteProjectsUseCase {
-  constructor(private readonly repository: ProjectRepository) {}
+  constructor(private readonly repository: IProjectRepository) {}
 
   async execute(): Promise<Output> {
-    const favoriteProjects = await this.repository.getFavoriteProjects();
-    return favoriteProjects;
+    const { projects } = await this.repository.getFavoriteProjects();
+    return { projects };
   }
 }
 

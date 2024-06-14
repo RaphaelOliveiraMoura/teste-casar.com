@@ -1,8 +1,8 @@
 import { User } from "../entities/user";
-import { UserRepository } from "../repositories/user-repository";
+import { IUserRepository } from "../repositories/user-repository";
 
 export class GetUserDetailsUseCase {
-  constructor(private readonly repository: UserRepository) {}
+  constructor(private readonly repository: IUserRepository) {}
 
   async execute(input: Input): Promise<Output> {
     const user = await this.repository.getUserWithProjects(input.identifier);

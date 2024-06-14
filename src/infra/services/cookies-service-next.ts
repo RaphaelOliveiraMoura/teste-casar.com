@@ -1,6 +1,6 @@
-import { CookiesService } from "@/domain/services/cookies-service";
+import { ICookiesService } from "@/domain/services/cookies-service";
 
-export class CookiesServiceNext implements CookiesService {
+export class CookiesServiceNext implements ICookiesService {
   async set(name: string, value: string): Promise<void> {
     console.log(name, value);
   }

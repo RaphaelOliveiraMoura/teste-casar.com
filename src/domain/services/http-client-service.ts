@@ -2,7 +2,7 @@ type Params = {
   headers?: Record<string, string>;
 };
 
-export interface HttpClientService {
+export interface IHttpClientService {
   get: <T>(
     url: string,
     params?: Params,

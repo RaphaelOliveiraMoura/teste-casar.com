@@ -1,6 +1,6 @@
-import { HttpClientService } from "@/domain/services/http-client-service";
+import { IHttpClientService } from "@/domain/services/http-client-service";
 
-export class HttpClientServiceFetch implements HttpClientService {
+export class HttpClientServiceFetch implements IHttpClientService {
   async get<T>(
     url: string,
     params?: { headers?: Record<string, string> | undefined } | undefined,

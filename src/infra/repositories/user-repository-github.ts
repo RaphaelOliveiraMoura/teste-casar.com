@@ -1,8 +1,8 @@
-import { UserRepository } from "@/domain/repositories/user-repository";
-import { HttpClientService } from "@/domain/services/http-client-service";
+import { IUserRepository } from "@/domain/repositories/user-repository";
+import { IHttpClientService } from "@/domain/services/http-client-service";
 
-export class UserRepositoryGithub implements UserRepository {
-  constructor(private readonly httpClient: HttpClientService) {}
+export class UserRepositoryGithub implements IUserRepository {
+  constructor(private readonly httpClient: IHttpClientService) {}
 
   async getUserWithProjects(identifier: string) {
     if (identifier !== "raphael") return null;
