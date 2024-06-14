@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function SearchRepositoriesSection() {
+export function SearchProjectsSection() {
   return (
     <section className="flex h-full flex-col items-center justify-center gap-8">
       <div className="grid place-items-center">

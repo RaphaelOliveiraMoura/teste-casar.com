@@ -1,12 +1,10 @@
 import Image from "next/image";
 
-type NotFoundRepositoriesSectionProps = {
+type NotFoundUserSectionProps = {
   searchText: string;
 };
 
-export function NotFoundRepositoriesSection({
-  searchText,
-}: NotFoundRepositoriesSectionProps) {
+export function NotFoundUserSection({ searchText }: NotFoundUserSectionProps) {
   return (
     <section className="flex h-full flex-col items-center justify-center gap-8">
       <div className="grid place-items-center">
