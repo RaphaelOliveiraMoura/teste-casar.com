@@ -14,7 +14,7 @@ export default async function Page({
   if (!searchText) redirect("/");
 
   const userAndProjects = await getUserDetails.execute({
-    identifier: searchText,
+    id: searchText,
   });
 
   if (!userAndProjects) {

@@ -5,13 +5,13 @@ import { HttpClientServiceGithub } from "../services/http-client-service-github"
 export class UserRepositoryGithub implements IUserRepository {
   constructor(private readonly httpClient: HttpClientServiceGithub) {}
 
-  async getUserDetails(identifier: string) {
-    if (identifier !== "raphael") return null;
+  async getUserDetails(id: string) {
+    if (id !== "raphael") return null;
 
     return {
       user: {
         name: "Elliot Alderson",
-        identifier: "@mr_robot",
+        id: "@mr_robot",
         imageUrl: "",
         description:
           "Trabalha com segurança cibernética, experiencia em empresas multinacionais.",

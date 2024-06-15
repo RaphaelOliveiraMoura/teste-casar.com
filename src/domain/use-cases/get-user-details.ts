@@ -5,13 +5,13 @@ export class GetUserDetailsUseCase {
   constructor(private readonly repository: IUserRepository) {}
 
   async execute(input: Input): Promise<Output> {
-    const user = await this.repository.getUserDetails(input.identifier);
+    const user = await this.repository.getUserDetails(input.id);
     return user;
   }
 }
 
 type Input = {
-  identifier: string;
+  id: string;
 };
 
 type Output = {

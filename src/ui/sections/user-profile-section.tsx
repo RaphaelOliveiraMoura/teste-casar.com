@@ -18,7 +18,7 @@ export function UserProfileSection({ user }: UserProfileSectionProps) {
       />
       <div>
         <h2 className="text-xl font-semibold">{user.name}</h2>
-        <span>{user.identifier}</span>
+        <span>{user.id}</span>
       </div>
       <p>{user.description}</p>
     </aside>

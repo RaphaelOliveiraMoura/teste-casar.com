@@ -5,15 +5,13 @@ export class GetUserProjectsUseCase {
   constructor(private readonly repository: IProjectRepository) {}
 
   async execute(input: Input): Promise<Output> {
-    const { projects } = await this.repository.getProjectsByUser(
-      input.identifier,
-    );
+    const { projects } = await this.repository.getProjectsByUser(input.id);
     return { projects };
   }
 }
 
 type Input = {
-  identifier: string;
+  id: string;
 };
 
 type Output = {
