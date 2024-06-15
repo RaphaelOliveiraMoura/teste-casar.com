@@ -1,12 +1,17 @@
+import { IConfigService } from "@/domain/services/config-service";
 import { IHttpClientService } from "@/domain/services/http-client-service";
 
 export class HttpClientServiceGithub implements IHttpClientService {
-  constructor(private readonly httpClient: IHttpClientService) {}
+  constructor(
+    private readonly httpClient: IHttpClientService,
+    private readonly config: IConfigService,
+  ) {}
 
   private getDefaultHeaders() {
     return {
       Accept: "application/vnd.github+json",
       "X-GitHub-Api-Version": "2022-11-28",
+      Authorization: `Bearer ${this.config.get("GITHUB_TOKEN")}`,
     };
   }
 
