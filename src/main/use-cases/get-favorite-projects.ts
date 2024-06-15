@@ -1,7 +1,7 @@
 import { GetFavoriteProjectsUseCase } from "@/domain/use-cases/get-favorite-projects";
 
-import { projectRepository } from "../repositories";
+import { favoriteProjectRepository } from "../repositories";
 
 export const getFavoriteProjects = new GetFavoriteProjectsUseCase(
-  projectRepository,
+  favoriteProjectRepository,
 );
