@@ -1,8 +1,10 @@
 import { Project } from "@/domain/entities/project";
-import { IProjectRepository } from "@/domain/repositories/project-repository";
+import { IFavoriteProjectRepository } from "@/domain/repositories/favorite-project-repository";
 import { ICookiesService } from "@/domain/services/cookies-service";
 
-export class ProjectRepositoryCookies implements IProjectRepository {
+export class FavoriteProjectRepositoryCookies
+  implements IFavoriteProjectRepository
+{
   private PROJECTS_COOKIE_KEY = "PROJECTS_COOKIE_KEY";
 
   constructor(private readonly cookies: ICookiesService) {}
