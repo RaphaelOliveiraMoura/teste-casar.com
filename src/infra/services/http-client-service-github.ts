@@ -7,6 +7,8 @@ export class HttpClientServiceGithub implements IHttpClientService {
     private readonly config: IConfigService,
   ) {}
 
+  private BASE_URL = "https://api.github.com";
+
   private getDefaultHeaders() {
     return {
       Accept: "application/vnd.github+json",
@@ -19,7 +21,7 @@ export class HttpClientServiceGithub implements IHttpClientService {
     url: string,
     params?: { headers?: Record<string, string> | undefined } | undefined,
   ): Promise<{ data: T; status: number }> {
-    return this.httpClient.get(url, {
+    return this.httpClient.get(this.BASE_URL + url, {
       ...params,
       headers: { ...this.getDefaultHeaders(), ...params?.headers },
     });
