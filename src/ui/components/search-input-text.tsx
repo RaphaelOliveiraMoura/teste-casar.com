@@ -18,7 +18,7 @@ export function SearchInputText({ className, ...props }: SearchInputTextProps) {
   });
 
   return (
-    <label className={cn(className, "relative w-full max-w-[600px]")}>
+    <label className={cn(className, "relative")}>
       <input
         className="w-full rounded-sm border py-2 pl-4 pr-8"
         type="text"

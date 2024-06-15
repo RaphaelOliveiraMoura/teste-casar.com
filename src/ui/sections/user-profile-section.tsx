@@ -8,7 +8,7 @@ type UserProfileSectionProps = {
 
 export function UserProfileSection({ user }: UserProfileSectionProps) {
   return (
-    <aside className="flex flex-col items-center gap-2 border p-6 text-center">
+    <aside className="sticky top-4 flex flex-col items-center gap-2 border p-6 text-center">
       <Image
         src={user.imageUrl}
         alt={`Imagem de perfil do usuário ${user.name}`}
@@ -18,7 +18,7 @@ export function UserProfileSection({ user }: UserProfileSectionProps) {
       />
       <div>
         <h2 className="text-xl font-semibold">{user.name}</h2>
-        <span>{user.id}</span>
+        <span>@{user.id}</span>
       </div>
       <p>{user.description}</p>
     </aside>

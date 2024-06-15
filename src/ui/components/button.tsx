@@ -1,12 +1,18 @@
+import { cn } from "../services/classname";
+
 type ButtonProps = {
   children?: React.ReactNode;
+  className?: string;
 };
 
-export function Button({ children }: ButtonProps) {
+export function Button({ children, className }: ButtonProps) {
   return (
     <button
       type="button"
-      className="flex items-center gap-2 bg-primary p-4 text-white"
+      className={cn(
+        "flex items-center gap-2 bg-primary p-6 text-white",
+        className,
+      )}
     >
       {children}
     </button>

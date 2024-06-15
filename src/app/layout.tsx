@@ -23,15 +23,17 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className="flex h-full flex-col items-center">
-          <header className="flex w-full justify-between border-b">
-            <SearchInputText
-              className="my-4 ml-8 w-full"
-              placeholder="Buscar usuário"
-            />
-            <Button>
-              <Heart />
-              Favoritos
-            </Button>
+          <header className="relative w-full border-b">
+            <div className="container grid grid-cols-2">
+              <SearchInputText className="my-4" placeholder="Buscar usuário" />
+            </div>
+
+            <div className="absolute bottom-0 right-0 top-0">
+              <Button className="h-full">
+                <Heart />
+                Favoritos
+              </Button>
+            </div>
           </header>
 
           <div className="container flex-1 py-8">{children}</div>
