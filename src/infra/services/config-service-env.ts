@@ -1,4 +1,4 @@
-import { IConfigService } from "@/domain/services/config-service";
+import { IConfigService } from "@/infra/interfaces/config-service";
 
 export class ConfigServiceEnv implements IConfigService {
   private env = {

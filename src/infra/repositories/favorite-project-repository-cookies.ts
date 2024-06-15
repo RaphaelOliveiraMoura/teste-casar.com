@@ -1,6 +1,6 @@
 import { Project } from "@/domain/entities/project";
 import { IFavoriteProjectRepository } from "@/domain/repositories/favorite-project-repository";
-import { ICookiesService } from "@/domain/services/cookies-service";
+import { ICookiesService } from "@/infra/interfaces/cookies-service";
 
 export class FavoriteProjectRepositoryCookies
   implements IFavoriteProjectRepository

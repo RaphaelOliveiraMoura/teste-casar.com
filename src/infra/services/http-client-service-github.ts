@@ -1,5 +1,5 @@
-import { IConfigService } from "@/domain/services/config-service";
-import { IHttpClientService } from "@/domain/services/http-client-service";
+import { IConfigService } from "@/infra/interfaces/config-service";
+import { IHttpClientService } from "@/infra/interfaces/http-client-service";
 
 export class HttpClientServiceGithub implements IHttpClientService {
   constructor(

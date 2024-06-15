@@ -1,4 +1,4 @@
-import { IHttpClientService } from "@/domain/services/http-client-service";
+import { IHttpClientService } from "@/infra/interfaces/http-client-service";
 
 export class HttpClientServiceFetch implements IHttpClientService {
   async get<T>(
