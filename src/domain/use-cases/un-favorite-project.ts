@@ -1,8 +1,8 @@
 import { Project } from "../entities/project";
-import { IProjectRepository } from "../repositories/project-repository";
+import { IFavoriteProjectRepository } from "../repositories/favorite-project-repository";
 
 export class UnFavoriteProjectUseCase {
-  constructor(private readonly repository: IProjectRepository) {}
+  constructor(private readonly repository: IFavoriteProjectRepository) {}
 
   async execute(input: Input): Promise<Output> {
     await this.repository.unFavoriteProject(input.project);

@@ -5,7 +5,7 @@ export class GetUserDetailsUseCase {
   constructor(private readonly repository: IUserRepository) {}
 
   async execute(input: Input): Promise<Output> {
-    const user = await this.repository.getUserWithProjects(input.identifier);
+    const user = await this.repository.getUserDetails(input.identifier);
     return user;
   }
 }
