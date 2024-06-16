@@ -5,6 +5,7 @@ import { cn } from "../services/classname";
 
 type ProjectCardProps = {
   project: Project;
+  onFavorite: (id: string, favorite: boolean) => void;
 };
 const colorsMap = {
   c: "bg-cyan-300",
@@ -23,7 +24,10 @@ const colorsMap = {
   html: "bg-[#FF4343]",
 } as const;
 
-export function ProjectCard({ project }: Readonly<ProjectCardProps>) {
+export function ProjectCard({
+  project,
+  onFavorite,
+}: Readonly<ProjectCardProps>) {
   return (
     <article className="flex gap-4 rounded-sm border p-4">
       <div className="grid flex-1 gap-2">
@@ -53,7 +57,7 @@ export function ProjectCard({ project }: Readonly<ProjectCardProps>) {
         </div>
       </div>
       <div>
-        <FavoriteButton project={project.toObject()} />
+        <FavoriteButton project={project.toObject()} onFavorite={onFavorite} />
       </div>
     </article>
   );

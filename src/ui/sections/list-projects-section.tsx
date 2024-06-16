@@ -20,12 +20,7 @@ export function ListProjectsSection({
   const loaderRef = useRef<HTMLDivElement>(null);
   const reachedLimitPages = useRef(!loadMoreProjects);
 
-  const [projects, setProjects] = useState<ProjectDto[]>([]);
-
-  useEffect(() => {
-    setProjects(initialProjectsState);
-    reachedLimitPages.current = false;
-  }, [initialProjectsState]);
+  const [projects, setProjects] = useState<ProjectDto[]>(initialProjectsState);
 
   const [isLoading, startTransition] = useTransition();
   const [currentPage, setCurrentPage] = useState(2);
@@ -38,10 +33,9 @@ export function ListProjectsSection({
       const { projects: newProjects, hasNextPage } =
         await loadMoreProjects(currentPage);
       setProjects((prev) => [...prev, ...newProjects]);
+      setCurrentPage((prev) => prev + 1);
       reachedLimitPages.current = !hasNextPage;
     });
-
-    setCurrentPage((prev) => prev + 1);
   }, [isLoading, loadMoreProjects, currentPage]);
 
   useEffect(() => {
@@ -68,7 +62,19 @@ export function ListProjectsSection({
       <ul className="flex flex-col gap-4">
         {projects.map((project) => (
           <li key={project.id}>
-            <ProjectCard project={new Project(project)} />
+            <ProjectCard
+              project={new Project(project)}
+              onFavorite={(id, favorite) =>
+                setProjects((prev) =>
+                  prev.map((p) => {
+                    if (p.id === id) {
+                      return { ...p, favorite };
+                    }
+                    return p;
+                  }),
+                )
+              }
+            />
           </li>
         ))}
         {!isLoading && projects.length === 0 && (

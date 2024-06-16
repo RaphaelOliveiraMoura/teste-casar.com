@@ -42,6 +42,7 @@ export default async function Page({
       </div>
       <div className="md:col-span-2">
         <ListProjectsSection
+          key={searchText}
           projects={userProjects.projects.map((p) => p.toObject())}
           loadMoreProjects={loadMoreProjects}
         />

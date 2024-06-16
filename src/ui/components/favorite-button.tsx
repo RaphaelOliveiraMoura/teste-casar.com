@@ -11,9 +11,13 @@ import { cn } from "../services/classname";
 
 type FavoriteButtonProps = {
   project: ProjectDto;
+  onFavorite: (id: string, favorite: boolean) => void;
 };
 
-export function FavoriteButton({ project }: Readonly<FavoriteButtonProps>) {
+export function FavoriteButton({
+  project,
+  onFavorite,
+}: Readonly<FavoriteButtonProps>) {
   const [favoriteState, setFavoriteState] = useOptimistic<boolean>(
     Boolean(project.favorite),
   );
@@ -21,6 +25,7 @@ export function FavoriteButton({ project }: Readonly<FavoriteButtonProps>) {
   const handleFavorite = () => {
     startTransition(async () => {
       setFavoriteState(!favoriteState);
+      onFavorite(project.id, !favoriteState);
 
       if (!favoriteState) {
         await favoriteProject({ project });
