@@ -7,21 +7,19 @@ export class HttpClientServiceGithub implements IHttpClientService {
     private readonly config: IConfigService,
   ) {}
 
-  private BASE_URL = "https://api.github.com";
-
   private getDefaultHeaders() {
     return {
       Accept: "application/vnd.github+json",
-      "X-GitHub-Api-Version": "2022-11-28",
+      "X-GitHub-Api-Version": this.config.get("GITHUB_VERSION") || "",
       Authorization: `Bearer ${this.config.get("GITHUB_TOKEN")}`,
     };
   }
 
   async get<T>(
     url: string,
-    params?: { headers?: Record<string, string> | undefined } | undefined,
+    params?: { headers?: Record<string, string> },
   ): Promise<{ data: T; status: number }> {
-    return this.httpClient.get(this.BASE_URL + url, {
+    return this.httpClient.get(this.config.get("GITHUB_URL") + url, {
       ...params,
       headers: { ...this.getDefaultHeaders(), ...params?.headers },
     });
