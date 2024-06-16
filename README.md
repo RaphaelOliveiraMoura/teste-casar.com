@@ -66,11 +66,13 @@ $ npm ci
 
 # configurando variáveis de ambiente
 $ cp .env.example .env
+```
 
-# OBS: depois de copiar o arquivo .env é necessário preenche-lo, adicionado o valor para a variável GITHUB_TOKEN
+OBS: depois de copiar o arquivo .env é necessário preenche-lo, adicionado o valor para a variável GITHUB_TOKEN
 
-# Em alguns testes que fiz aparentmente o sistema executa normalmente sem a necessidade de configurar as crenenciais do github (aparentemente os endpoints que utilizei eram públicos), mas caso queira fazer a configuração basta seguir o guia https://docs.github.com/pt/rest/authentication/authenticating-to-the-rest-api?apiVersion=2022-11-28 para conseguir o token para ser utilizado no .env
+Em alguns testes que fiz aparentmente o sistema executa normalmente sem a necessidade de configurar as crenenciais do github (aparentemente os endpoints que utilizei eram públicos), mas caso queira fazer a configuração basta seguir o [guia de autenticação do github](https://docs.github.com/pt/rest/authentication/authenticating-to-the-rest-api?apiVersion=2022-11-28) para conseguir o token para ser utilizado no .env
 
+```sh
 # buildando aplicação
 $ npm run build
 
