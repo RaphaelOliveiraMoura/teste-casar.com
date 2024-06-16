@@ -1,7 +1,7 @@
 "use client";
 
 import { Search } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { cn } from "../services/classname";
 import { debounce } from "../services/debounce";
@@ -10,7 +10,9 @@ type SearchInputTextProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 export function SearchInputText({ className, ...props }: SearchInputTextProps) {
   const { replace } = useRouter();
-  const searchParams = useSearchParams();
+  const searchParams = new URLSearchParams(
+    typeof window !== "undefined" ? window.location.search : undefined,
+  );
 
   const handleSearchText = debounce((searchText: string) => {
     const urlParams = new URLSearchParams();
