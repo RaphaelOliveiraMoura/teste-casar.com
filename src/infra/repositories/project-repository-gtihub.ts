@@ -18,7 +18,7 @@ export class ProjectRepositoryCookies implements IProjectRepository {
           new Project({
             id: String(repo.id),
             description: repo.description,
-            techs: repo.topics,
+            techs: repo.language ? [repo.language] : [],
             title: repo.name,
             updatedAt: repo.updated_at,
           }),
@@ -40,7 +40,7 @@ type ListUserRepositoriesGithubResponse = {
   private: boolean;
   description: string;
   fork: boolean;
-  language: null;
+  language: string | null;
   forks_count: number;
   stargazers_count: number;
   watchers_count: number;
