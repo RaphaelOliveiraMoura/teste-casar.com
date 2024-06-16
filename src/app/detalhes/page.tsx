@@ -27,11 +27,11 @@ export default async function Page({
   });
 
   return (
-    <div className="grid grid-cols-3 gap-8">
+    <div className="grid gap-8 md:grid-cols-3">
       <div>
         <UserProfileSection user={userDetails.user} />
       </div>
-      <div className="col-span-2">
+      <div className="md:col-span-2">
         <ListProjectsSection projects={userProjects.projects} />
       </div>
     </div>

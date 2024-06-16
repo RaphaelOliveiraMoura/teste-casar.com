@@ -7,7 +7,7 @@ const config: Config = {
   ],
   theme: {
     container: {
-      padding: "2rem",
+      padding: "1rem",
       center: true,
     },
     extend: {

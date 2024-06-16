@@ -7,16 +7,19 @@ import { SearchInputText } from "@/ui/components/search-input-text";
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <main className="flex h-full flex-col items-center">
-      <header className="relative w-full border-b">
-        <div className="container grid grid-cols-2">
-          <SearchInputText className="my-4" placeholder="Buscar usuário" />
+      <header className="relative flex w-full justify-between border-b">
+        <div className="container flex grid-cols-2 items-center md:grid">
+          <SearchInputText
+            className="my-4 flex-1"
+            placeholder="Buscar usuário"
+          />
         </div>
 
-        <div className="absolute bottom-0 right-0 top-0">
+        <div className="bottom-0 right-0 top-0 md:absolute">
           <Link href="/favoritos">
             <Button className="h-full">
               <Heart />
-              Favoritos
+              <span className="hidden md:block">Favoritos</span>
             </Button>
           </Link>
         </div>
