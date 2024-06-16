@@ -27,14 +27,24 @@ describe("<FavoriteButton />", () => {
   };
 
   test("check if show add to favorite icon when not favorite", () => {
-    render(<FavoriteButton project={{ ...project, favorite: false }} />);
+    render(
+      <FavoriteButton
+        project={{ ...project, favorite: false }}
+        onFavorite={() => null}
+      />,
+    );
     expect(
       screen.getByRole("button", { name: "Add as favorite" }),
     ).toBeDefined();
   });
 
   test("check if show remove from favorite icon when is favorite", () => {
-    render(<FavoriteButton project={{ ...project, favorite: true }} />);
+    render(
+      <FavoriteButton
+        project={{ ...project, favorite: true }}
+        onFavorite={() => null}
+      />,
+    );
     expect(
       screen.getByRole("button", { name: "Remove from favorite" }),
     ).toBeDefined();
@@ -42,7 +52,7 @@ describe("<FavoriteButton />", () => {
 
   test("toggle favorite button", async () => {
     const projectToMatch = { ...project, favorite: false };
-    render(<FavoriteButton project={projectToMatch} />);
+    render(<FavoriteButton project={projectToMatch} onFavorite={() => null} />);
 
     const button = screen.getByRole("button");
 
