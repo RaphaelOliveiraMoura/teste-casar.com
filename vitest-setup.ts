@@ -1,5 +1,7 @@
 import { vi } from "vitest";
 
+vi.mock("next/font/google", () => ({ Inter: () => ({ className: "" }) }));
+
 vi.mock("react", async (importOriginal) => {
   const originalModule = await importOriginal<typeof import("react")>();
   return {

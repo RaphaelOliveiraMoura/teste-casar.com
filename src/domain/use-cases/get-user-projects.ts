@@ -18,6 +18,8 @@ export class GetUserProjectsUseCase {
     for (const project of projects) {
       if (favoriteProjects.some((p) => p.id === project.id)) {
         project.setFavorite(true);
+      } else {
+        project.setFavorite(false);
       }
     }
 
