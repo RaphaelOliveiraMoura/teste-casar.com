@@ -33,6 +33,7 @@ export function FavoriteButton({ project }: FavoriteButtonProps) {
   return (
     <button
       type="button"
+      aria-label={!favoriteState ? "Add as favorite" : "Remove from favorite"}
       onClick={() => handleFavorite()}
       className={cn(
         "rounded-full border p-3",
