@@ -1,5 +1,8 @@
 import { Project } from "../entities/project";
 
 export interface IProjectRepository {
-  getProjectsByUser: (id: string) => Promise<{ projects: Project[] }>;
+  getProjectsByUser: (
+    id: string,
+    page?: number,
+  ) => Promise<{ projects: Project[]; hasNextPage: boolean }>;
 }

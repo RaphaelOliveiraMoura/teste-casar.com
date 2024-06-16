@@ -2,7 +2,7 @@ import { getFavoriteProjects } from "@/main/use-cases";
 import { ListProjectsSection } from "@/ui/sections/list-projects-section";
 
 export default async function Page() {
-  const { projects } = await getFavoriteProjects.execute();
+  const { projects } = await getFavoriteProjects();
 
   return (
     <div>
@@ -10,7 +10,7 @@ export default async function Page() {
         Meus Favoritos
       </h1>
       <div className="m-auto max-w-[800px]">
-        <ListProjectsSection projects={projects} />
+        <ListProjectsSection projects={projects.map((p) => p.toObject())} />
       </div>
     </div>
   );

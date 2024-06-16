@@ -18,7 +18,7 @@ export class HttpClientServiceGithub implements IHttpClientService {
   async get<T>(
     url: string,
     params?: { headers?: Record<string, string> },
-  ): Promise<{ data: T; status: number }> {
+  ): Promise<{ data: T; status: number; headers: Record<string, string> }> {
     return this.httpClient.get(this.config.get("GITHUB_URL") + url, {
       ...params,
       headers: { ...this.getDefaultHeaders(), ...params?.headers },

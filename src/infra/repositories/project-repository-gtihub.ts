@@ -3,16 +3,22 @@ import { IProjectRepository } from "@/domain/repositories/project-repository";
 
 import { HttpClientServiceGithub } from "../services/http-client-service-github";
 
-export class ProjectRepositoryCookies implements IProjectRepository {
+export class ProjectRepositoryGithub implements IProjectRepository {
   constructor(private readonly httpClient: HttpClientServiceGithub) {}
 
-  async getProjectsByUser(id: string): Promise<{ projects: Project[] }> {
-    const { data } =
+  async getProjectsByUser(
+    id: string,
+    page = 1,
+  ): Promise<{ projects: Project[]; hasNextPage: boolean }> {
+    const itemsPerPage = 8;
+
+    const { data, headers } =
       await this.httpClient.get<ListUserRepositoriesGithubResponse>(
-        `/users/${id}/repos`,
+        `/users/${id}/repos?per_page=${itemsPerPage}&page=${page}`,
       );
 
     return {
+      hasNextPage: headers.link?.includes('rel="next"'),
       projects: data.map(
         (repo) =>
           new Project({

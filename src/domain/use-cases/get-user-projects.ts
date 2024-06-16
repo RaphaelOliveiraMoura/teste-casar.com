@@ -9,9 +9,8 @@ export class GetUserProjectsUseCase {
   ) {}
 
   async execute(input: Input): Promise<Output> {
-    const { projects } = await this.projectRepository.getProjectsByUser(
-      input.id,
-    );
+    const { projects, hasNextPage } =
+      await this.projectRepository.getProjectsByUser(input.id, input.page);
 
     const { projects: favoriteProjects } =
       await this.favoriteProjectRepository.getFavoriteProjects();
@@ -22,14 +21,16 @@ export class GetUserProjectsUseCase {
       }
     }
 
-    return { projects };
+    return { projects, hasNextPage };
   }
 }
 
-type Input = {
+export type Input = {
   id: string;
+  page?: number;
 };
 
 type Output = {
   projects: Project[];
+  hasNextPage: boolean;
 };
