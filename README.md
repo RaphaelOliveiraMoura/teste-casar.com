@@ -1,4 +1,4 @@
-## Algumas decisões técnicas
+## Detalhamento técnico
 
 ### Arquitetura
 
@@ -16,6 +16,12 @@ A estruturação das pastas do projeto seguiu o seguinte modelo:
 
 - **main/** : Camada onde é feito a `injeção de dependências` de todos os componentes do sistema, é nessa camada que fazemos o link da camada de domínio com a camada de infra. Basicamente nessa camada é indicado quais recursos iremos usar em cada cenário.
 
+### Algumas decisões
+
+- **Utilização de cookies para persistência de dados**: Optei por usar os cookies para persistência de dados por conta do `suporte com server side` e por ser uma solução que fica armazenada no navegador do usuário (como não existe um sistema de autentição discartei o uso de algum banco de dados externo pois necessitaria de alguma recurso para garantir a identificação de cada usuário). O problema é que o limite de armazenamento dos cookies é relativamente pequeno (se não me engano 4kb para cada cookie), ou seja, provavelmente não deve ser muito difícil atingir esse limite com a solução atual. Uma outra opção talvez melhor seria o uso do localstorage, porém optei por não seguir nesse caminho por conta do suporte com o server side. Os cookies eles são comportilhados com o servidor oque permite pre renderizar a página de favoritos, enquanto com localsorage eu so conseguiria acesso as informações do repositórios favoritos durante a execução no client / client side.
+
+- **Debounce para pesquisa dos usuários**: Optei por fazer o sistema de busca dos usuários / repositórios utilizando a estratégia de debounce, conforme o usuário digita no input existe um delay que caso o usuário não digite nada após, ele automaticamente já realiza a busca do usuário, sem a necessidade dele clicar em nada para confirmar a solicitação de busca. Essa estratégia é bem comum em diferentes cenário da web. Utilizei 800ms como valor de delay para função de debounce, não existe um valor correto para se utilizar, mas isso pode gerar alguns fatores na usabilidade, por exemplo, caso o usuário demore demais para digitar por completo o nome pode ser que o sistema realize a operação de busca "antes da hora", o que pode impactar na experiência do usuário.
+
 ### Tecnologias utilizadas
 
 - Nextjs : Utilizamos uma abordagem de renderizacao pelo servidor com os `Server Componentes` e `Server Actions` na grande parte das funcionalidades. Em cenários reais essa abordagem é bem positiva em questões de `performance` e `SEO`.
@@ -30,12 +36,6 @@ A estruturação das pastas do projeto seguiu o seguinte modelo:
 
 Resultado de um teste no lighthouse
 ![lighthouse](./docs/lighthouse.png)
-
-### Algumas decisões
-
-- **Utilização de cookies para persistência de dados**: Optei por usar os cookies para persistência de dados por conta do `suporte com server side` e por ser uma solução que fica armazenada no navegador do usuário (como não existe um sistema de autentição discartei o uso de algum banco de dados externo pois necessitaria de alguma recurso para garantir a identificação de cada usuário). O problema é que o limite de armazenamento dos cookies é relativamente pequeno (se não me engano 4kb para cada cookie), ou seja, provavelmente não deve ser muito difícil atingir esse limite com a solução atual. Uma outra opção talvez melhor seria o uso do localstorage, porém optei por não seguir nesse caminho por conta do suporte com o server side. Os cookies eles são comportilhados com o servidor oque permite pre renderizar a página de favoritos, enquanto com localsorage eu so conseguiria acesso as informações do repositórios favoritos durante a execução no client / client side.
-
-- **Debounce para pesquisa dos usuários**: Optei por fazer o sistema de busca dos usuários / repositórios utilizando a estratégia de debounce, conforme o usuário digita no input existe um delay que caso o usuário não digite nada após, ele automaticamente já realiza a busca do usuário, sem a necessidade dele clicar em nada para confirmar a solicitação de busca. Essa estratégia é bem comum em diferentes cenário da web. Utilizei 800ms como valor de delay para função de debounce, não existe um valor correto para se utilizar, mas isso pode gerar alguns fatores na usabilidade, por exemplo, caso o usuário demore demais para digitar por completo o nome pode ser que o sistema realize a operação de busca "antes da hora", o que pode impactar na experiência do usuário.
 
 ### Abertura de melhorias
 
@@ -63,6 +63,13 @@ $ git clone git@github.com:RaphaelOliveiraMoura/teste-casarme.git
 ```sh
 # instalando dependências
 $ npm ci
+
+# configurando variáveis de ambiente
+$ cp .env.example .env
+
+# OBS: depois de copiar o arquivo .env é necessário preenche-lo, adicionado o valor para a variável GITHUB_TOKEN
+
+# Em alguns testes que fiz aparentmente o sistema executa normalmente sem a necessidade de configurar as crenenciais do github (aparentemente os endpoints que utilizei eram públicos), mas caso queira fazer a configuração basta seguir o guia https://docs.github.com/pt/rest/authentication/authenticating-to-the-rest-api?apiVersion=2022-11-28 para conseguir o token para ser utilizado no .env
 
 # buildando aplicação
 $ npm run build
