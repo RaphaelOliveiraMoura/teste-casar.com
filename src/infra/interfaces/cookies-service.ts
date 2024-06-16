@@ -1,5 +1,5 @@
 export interface ICookiesService {
   set(name: string, value: string): Promise<void>;
 
-  get(name: string): Promise<string | undefined>;
+  get(name: string): Promise<string | null>;
 }

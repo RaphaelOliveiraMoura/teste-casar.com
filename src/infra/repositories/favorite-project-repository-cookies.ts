@@ -1,4 +1,4 @@
-import { Project } from "@/domain/entities/project";
+import { Project, ProjectDto } from "@/domain/entities/project";
 import { IFavoriteProjectRepository } from "@/domain/repositories/favorite-project-repository";
 import { ICookiesService } from "@/infra/interfaces/cookies-service";
 
@@ -14,7 +14,14 @@ export class FavoriteProjectRepositoryCookies
     if (!projectsCookie) return { projects: [] };
 
     const projects = JSON.parse(projectsCookie);
-    return { projects };
+
+    return {
+      projects: projects.map((p: ProjectDto) => {
+        const project = new Project(p);
+        project.setFavorite(true);
+        return project;
+      }),
+    };
   }
 
   async favoriteProject(project: Project): Promise<void> {

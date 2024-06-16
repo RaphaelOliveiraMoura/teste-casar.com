@@ -2,11 +2,16 @@ import { ICookiesService } from "@/infra/interfaces/cookies-service";
 
 export class CookiesServiceNext implements ICookiesService {
   async set(name: string, value: string): Promise<void> {
-    console.log(name, value);
+    const { cookies } = await import("next/headers");
+
+    const expires = new Date();
+    expires.setMonth(expires.getMonth() + 1);
+    cookies().set(name, value, { expires });
   }
 
-  async get(name: string): Promise<string | undefined> {
-    console.log(name);
-    throw new Error("Method not implemented.");
+  async get(name: string): Promise<string | null> {
+    const { cookies } = await import("next/headers");
+
+    return cookies().get(name)?.value || null;
   }
 }
