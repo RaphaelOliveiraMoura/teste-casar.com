@@ -9,7 +9,7 @@
     "lint": "next lint --no-cache",
     "lint:fix": "next lint --no-cache --fix",
     "prepare": "husky",
-    "test": "vitest",
+    "test": "vitest --coverage",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
