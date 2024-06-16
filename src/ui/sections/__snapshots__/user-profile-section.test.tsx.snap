@@ -1,0 +1,239 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<SearchProjectsSection /> 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section
+        class="flex h-full flex-col items-center justify-center gap-8"
+      >
+        <div
+          class="grid place-items-center"
+        >
+          <h2
+            class="text-xl font-semibold"
+          >
+            Procure pelo Nome ou Nome de Usuário
+          </h2>
+          <p>
+            Encontre os repositórios de algum usuário digitando no campo acima
+          </p>
+        </div>
+        <img
+          alt="Imagem de uma pessoa com uma lupa buscando por repositórios na web"
+          data-nimg="1"
+          decoding="async"
+          height="200"
+          loading="lazy"
+          src="/undraw_people_search.svg"
+          style="color: transparent;"
+          width="200"
+        />
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section
+      class="flex h-full flex-col items-center justify-center gap-8"
+    >
+      <div
+        class="grid place-items-center"
+      >
+        <h2
+          class="text-xl font-semibold"
+        >
+          Procure pelo Nome ou Nome de Usuário
+        </h2>
+        <p>
+          Encontre os repositórios de algum usuário digitando no campo acima
+        </p>
+      </div>
+      <img
+        alt="Imagem de uma pessoa com uma lupa buscando por repositórios na web"
+        data-nimg="1"
+        decoding="async"
+        height="200"
+        loading="lazy"
+        src="/undraw_people_search.svg"
+        style="color: transparent;"
+        width="200"
+      />
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<UserProfileSection /> 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <aside
+        class="sticky top-4 flex flex-col items-center gap-2 border p-6 text-center"
+      >
+        <img
+          alt="Imagem de perfil do usuário user test"
+          class="rounded-full bg-grey-neutral"
+          data-nimg="1"
+          decoding="async"
+          height="200"
+          loading="lazy"
+          src="/_next/image?url=http%3A%2F%2Fgoogle.com&w=640&q=75"
+          srcset="/_next/image?url=http%3A%2F%2Fgoogle.com&w=256&q=75 1x, /_next/image?url=http%3A%2F%2Fgoogle.com&w=640&q=75 2x"
+          style="color: transparent;"
+          width="200"
+        />
+        <div>
+          <h2
+            class="text-xl font-semibold"
+          >
+            user test
+          </h2>
+          <span>
+            @
+            1
+          </span>
+        </div>
+        <p>
+          user description
+        </p>
+      </aside>
+    </div>
+  </body>,
+  "container": <div>
+    <aside
+      class="sticky top-4 flex flex-col items-center gap-2 border p-6 text-center"
+    >
+      <img
+        alt="Imagem de perfil do usuário user test"
+        class="rounded-full bg-grey-neutral"
+        data-nimg="1"
+        decoding="async"
+        height="200"
+        loading="lazy"
+        src="/_next/image?url=http%3A%2F%2Fgoogle.com&w=640&q=75"
+        srcset="/_next/image?url=http%3A%2F%2Fgoogle.com&w=256&q=75 1x, /_next/image?url=http%3A%2F%2Fgoogle.com&w=640&q=75 2x"
+        style="color: transparent;"
+        width="200"
+      />
+      <div>
+        <h2
+          class="text-xl font-semibold"
+        >
+          user test
+        </h2>
+        <span>
+          @
+          1
+        </span>
+      </div>
+      <p>
+        user description
+      </p>
+    </aside>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

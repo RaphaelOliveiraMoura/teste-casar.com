@@ -1,0 +1,245 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<NotFoundUserSection /> 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section
+        class="flex h-full flex-col items-center justify-center gap-8"
+      >
+        <div
+          class="grid place-items-center"
+        >
+          <strong
+            class="text-xl font-semibold text-primary"
+          >
+            "
+            not found text
+            "
+          </strong>
+          <h2
+            class="text-xl font-semibold"
+          >
+            Nenhum usuário encontrado
+          </h2>
+          <p>
+            Verifique se a escrita está correta ou tente novamente
+          </p>
+        </div>
+        <img
+          alt="Imagem de uma nave espacial"
+          data-nimg="1"
+          decoding="async"
+          height="200"
+          loading="lazy"
+          src="/undraw_taken.svg"
+          style="color: transparent;"
+          width="200"
+        />
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section
+      class="flex h-full flex-col items-center justify-center gap-8"
+    >
+      <div
+        class="grid place-items-center"
+      >
+        <strong
+          class="text-xl font-semibold text-primary"
+        >
+          "
+          not found text
+          "
+        </strong>
+        <h2
+          class="text-xl font-semibold"
+        >
+          Nenhum usuário encontrado
+        </h2>
+        <p>
+          Verifique se a escrita está correta ou tente novamente
+        </p>
+      </div>
+      <img
+        alt="Imagem de uma nave espacial"
+        data-nimg="1"
+        decoding="async"
+        height="200"
+        loading="lazy"
+        src="/undraw_taken.svg"
+        style="color: transparent;"
+        width="200"
+      />
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`<SearchProjectsSection /> 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section
+        class="flex h-full flex-col items-center justify-center gap-8"
+      >
+        <div
+          class="grid place-items-center"
+        >
+          <h2
+            class="text-xl font-semibold"
+          >
+            Procure pelo Nome ou Nome de Usuário
+          </h2>
+          <p>
+            Encontre os repositórios de algum usuário digitando no campo acima
+          </p>
+        </div>
+        <img
+          alt="Imagem de uma pessoa com uma lupa buscando por repositórios na web"
+          data-nimg="1"
+          decoding="async"
+          height="200"
+          loading="lazy"
+          src="/undraw_people_search.svg"
+          style="color: transparent;"
+          width="200"
+        />
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section
+      class="flex h-full flex-col items-center justify-center gap-8"
+    >
+      <div
+        class="grid place-items-center"
+      >
+        <h2
+          class="text-xl font-semibold"
+        >
+          Procure pelo Nome ou Nome de Usuário
+        </h2>
+        <p>
+          Encontre os repositórios de algum usuário digitando no campo acima
+        </p>
+      </div>
+      <img
+        alt="Imagem de uma pessoa com uma lupa buscando por repositórios na web"
+        data-nimg="1"
+        decoding="async"
+        height="200"
+        loading="lazy"
+        src="/undraw_people_search.svg"
+        style="color: transparent;"
+        width="200"
+      />
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
