@@ -1,6 +1,7 @@
 import { Heart } from "lucide-react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 import { Button } from "@/ui/components/button";
 import { SearchInputText } from "@/ui/components/search-input-text";
@@ -29,10 +30,12 @@ export default function RootLayout({
             </div>
 
             <div className="absolute bottom-0 right-0 top-0">
-              <Button className="h-full">
-                <Heart />
-                Favoritos
-              </Button>
+              <Link href="/favoritos">
+                <Button className="h-full">
+                  <Heart />
+                  Favoritos
+                </Button>
+              </Link>
             </div>
           </header>
 

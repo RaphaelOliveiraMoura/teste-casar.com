@@ -6,9 +6,11 @@ export class UserRepositoryGithub implements IUserRepository {
   constructor(private readonly httpClient: HttpClientServiceGithub) {}
 
   async getUserDetails(id: string) {
-    const { data } = await this.httpClient.get<GetUserGithubResponse>(
+    const { data, status } = await this.httpClient.get<GetUserGithubResponse>(
       `/users/${id}`,
     );
+
+    if (status === 404) return null;
 
     return {
       user: {

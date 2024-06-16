@@ -1,10 +1,9 @@
 import { redirect } from "next/navigation";
 
-import { getUserDetails } from "@/main/use-cases/get-user-details";
-import { getUserProject } from "@/main/use-cases/get-user-project";
+import { getUserProject, getUserDetails } from "@/main/use-cases";
+import { ListProjectsSection } from "@/ui/sections/list-projects-section";
 import { NotFoundUserSection } from "@/ui/sections/not-found-user-section";
 import { UserProfileSection } from "@/ui/sections/user-profile-section";
-import { UserProjectsSection } from "@/ui/sections/user-projects-section";
 
 type PageProps = {
   searchParams: { q?: string };
@@ -33,7 +32,7 @@ export default async function Page({
         <UserProfileSection user={userDetails.user} />
       </div>
       <div className="col-span-2">
-        <UserProjectsSection projects={userProjects.projects} />
+        <ListProjectsSection projects={userProjects.projects} />
       </div>
     </div>
   );

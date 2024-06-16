@@ -1,5 +1,8 @@
 import { GetUserProjectsUseCase } from "@/domain/use-cases/get-user-projects";
 
-import { projectRepository } from "../repositories";
+import { projectRepository, favoriteProjectRepository } from "../repositories";
 
-export const getUserProject = new GetUserProjectsUseCase(projectRepository);
+export const getUserProject = new GetUserProjectsUseCase(
+  projectRepository,
+  favoriteProjectRepository,
+);

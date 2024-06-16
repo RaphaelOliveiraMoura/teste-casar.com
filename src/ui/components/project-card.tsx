@@ -1,6 +1,6 @@
-import { Heart } from "lucide-react";
-
 import { Project } from "@/domain/entities/project";
+
+import { FavoriteButton } from "./favorite-button";
 
 type ProjectCardProps = {
   project: Project;
@@ -28,9 +28,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
       <div>
-        <div className="rounded-full border border-primary p-3">
-          <Heart className="fill-primary text-primary" />
-        </div>
+        <FavoriteButton project={project.toObject()} />
       </div>
     </article>
   );

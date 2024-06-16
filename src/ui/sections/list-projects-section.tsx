@@ -2,11 +2,11 @@ import { Project } from "@/domain/entities/project";
 
 import { ProjectCard } from "../components/project-card";
 
-type UserProjectsSectionProps = {
+type ListProjectsSectionProps = {
   projects: Project[];
 };
 
-export function UserProjectsSection({ projects }: UserProjectsSectionProps) {
+export function ListProjectsSection({ projects }: ListProjectsSectionProps) {
   return (
     <div>
       <ul className="flex flex-col gap-4">
@@ -15,6 +15,9 @@ export function UserProjectsSection({ projects }: UserProjectsSectionProps) {
             <ProjectCard project={project} />
           </li>
         ))}
+        {projects.length === 0 && (
+          <p className="text-center">Nenhum repositório encontrado</p>
+        )}
       </ul>
     </div>
   );

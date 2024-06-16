@@ -13,13 +13,16 @@ export class ProjectRepositoryCookies implements IProjectRepository {
       );
 
     return {
-      projects: data.map((repo) => ({
-        id: String(repo.id),
-        description: repo.description,
-        techs: repo.topics,
-        title: repo.name,
-        updatedAt: new Date(repo.updated_at),
-      })),
+      projects: data.map(
+        (repo) =>
+          new Project({
+            id: String(repo.id),
+            description: repo.description,
+            techs: repo.topics,
+            title: repo.name,
+            updatedAt: repo.updated_at,
+          }),
+      ),
     };
   }
 }
