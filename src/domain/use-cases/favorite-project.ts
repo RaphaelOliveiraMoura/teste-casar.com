@@ -1,16 +1,16 @@
-import { Project } from "../entities/project";
+import { Project, ProjectDto } from "../entities/project";
 import { IFavoriteProjectRepository } from "../repositories/favorite-project-repository";
 
 export class FavoriteProjectUseCase {
   constructor(private readonly repository: IFavoriteProjectRepository) {}
 
   async execute(input: Input): Promise<Output> {
-    await this.repository.favoriteProject(input.project);
+    await this.repository.favoriteProject(new Project(input.project));
   }
 }
 
-type Input = {
-  project: Project;
+export type Input = {
+  project: ProjectDto;
 };
 
 type Output = void;
