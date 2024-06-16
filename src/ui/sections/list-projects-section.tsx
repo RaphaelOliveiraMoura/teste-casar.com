@@ -16,7 +16,7 @@ type ListProjectsSectionProps = {
 export function ListProjectsSection({
   projects: initialProjectsState,
   loadMoreProjects,
-}: ListProjectsSectionProps) {
+}: Readonly<ListProjectsSectionProps>) {
   const loaderRef = useRef<HTMLDivElement>(null);
   const reachedLimitPages = useRef(!loadMoreProjects);
 

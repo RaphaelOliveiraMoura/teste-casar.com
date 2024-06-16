@@ -23,7 +23,7 @@ const colorsMap = {
   html: "bg-[#FF4343]",
 } as const;
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project }: Readonly<ProjectCardProps>) {
   return (
     <article className="flex gap-4 rounded-sm border p-4">
       <div className="grid flex-1 gap-2">

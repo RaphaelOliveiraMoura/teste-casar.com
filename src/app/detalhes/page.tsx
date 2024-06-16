@@ -15,7 +15,7 @@ type PageProps = {
 
 export default async function Page({
   searchParams: { q: searchText },
-}: PageProps) {
+}: Readonly<PageProps>) {
   if (!searchText) redirect("/");
 
   const userDetails = await getUserDetails.execute({

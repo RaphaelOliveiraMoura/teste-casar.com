@@ -4,7 +4,7 @@ import { IFavoriteProjectRepository } from "../repositories/favorite-project-rep
 export class UnFavoriteProjectUseCase {
   constructor(private readonly repository: IFavoriteProjectRepository) {}
 
-  async execute(input: Input): Promise<Output> {
+  async execute(input: Input): Promise<void> {
     await this.repository.unFavoriteProject(new Project(input.project));
   }
 }
@@ -12,5 +12,3 @@ export class UnFavoriteProjectUseCase {
 export type Input = {
   project: ProjectDto;
 };
-
-type Output = void;

@@ -13,7 +13,7 @@ type FavoriteButtonProps = {
   project: ProjectDto;
 };
 
-export function FavoriteButton({ project }: FavoriteButtonProps) {
+export function FavoriteButton({ project }: Readonly<FavoriteButtonProps>) {
   const [favoriteState, setFavoriteState] = useOptimistic<boolean>(
     Boolean(project.favorite),
   );

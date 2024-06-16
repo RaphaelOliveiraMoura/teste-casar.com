@@ -6,7 +6,9 @@ type UserProfileSectionProps = {
   user: User;
 };
 
-export function UserProfileSection({ user }: UserProfileSectionProps) {
+export function UserProfileSection({
+  user,
+}: Readonly<UserProfileSectionProps>) {
   return (
     <aside className="sticky top-4 flex flex-col items-center gap-2 border p-6 text-center">
       <Image

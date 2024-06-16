@@ -8,7 +8,10 @@ import { debounce } from "../services/debounce";
 
 type SearchInputTextProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-export function SearchInputText({ className, ...props }: SearchInputTextProps) {
+export function SearchInputText({
+  className,
+  ...props
+}: Readonly<SearchInputTextProps>) {
   const { replace } = useRouter();
   const searchParams = useSearchParams();
 

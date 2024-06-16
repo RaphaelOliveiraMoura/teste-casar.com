@@ -12,7 +12,7 @@ vi.mock("@/main/use-cases", () => ({
         id: "1",
         name: "user test",
         description: "user description",
-        imageUrl: "http://google.com",
+        imageUrl: "https://google.com",
       },
     }),
   },

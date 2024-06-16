@@ -5,7 +5,7 @@ type ButtonProps = {
   className?: string;
 };
 
-export function Button({ children, className }: ButtonProps) {
+export function Button({ children, className }: Readonly<ButtonProps>) {
   return (
     <button
       type="button"

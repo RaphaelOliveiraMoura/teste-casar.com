@@ -5,7 +5,9 @@ import { Suspense } from "react";
 import { Button } from "@/ui/components/button";
 import { SearchInputText } from "@/ui/components/search-input-text";
 
-export default function Template({ children }: { children: React.ReactNode }) {
+export default function Template({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <main className="flex h-full flex-col items-center">
       <header className="relative flex w-full justify-between border-b">
